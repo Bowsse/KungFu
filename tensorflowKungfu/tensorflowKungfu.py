@@ -11,6 +11,7 @@ import io
 import time
 import pandas as pd
 import numpy as np
+import scipy.misc
 from IPython.display import clear_output
 from random import randint
 import os
@@ -172,10 +173,6 @@ def process_img(image):
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) #RGB to Grey Scale
     image = image[300:900, 100:1200] #Crop Region of Interest(ROI)
     image = cv2.resize(image, (80,80))
-    
-    with open(r"canvas.png", 'wb') as f:
-        f.write(image)
-        
     return  image
 
 def show_img(graphs = False):
